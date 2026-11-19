@@ -1,4 +1,5 @@
 
+import Link from "next/link";
 import { ArrowUpRight, MapPin, Phone } from "lucide-react";
 
 const phone = "9109173926";
@@ -18,35 +19,51 @@ export default function BookingCTA() {
             <h2 className="mx-auto max-w-4xl text-4xl font-black uppercase leading-tight md:text-6xl">
               Ready For The
               <br />
-              <span className="text-red-500">Ultimate Shine?</span>
+              <span className="text-red-500">
+                Ultimate Shine?
+              </span>
             </h2>
 
             <p className="mx-auto mt-6 max-w-xl leading-7 text-neutral-400">
               Connect with our Gwalior studio to discuss
-              your car care requirements.
+              your car care requirements or request an
+              appointment online.
             </p>
 
             <div className="mt-10 flex flex-wrap justify-center gap-4">
+              <Link
+                href="/booking"
+                className="inline-flex items-center gap-3 bg-red-600 px-7 py-4 font-bold text-white transition hover:bg-red-700"
+              >
+                Book Appointment
+                <ArrowUpRight size={18} />
+              </Link>
+
               <a
-                href={`https://wa.me/91${phone}?text=${encodeURIComponent("Hello, I would like to enquire about car care services.")}`}
+                href={`https://wa.me/91${phone}?text=${encodeURIComponent(
+                  "Hello, I would like to enquire about car care services."
+                )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-red-600 px-7 py-4 font-bold transition hover:bg-red-700"
+                className="inline-flex items-center gap-3 border border-white/40 px-7 py-4 font-bold text-white transition hover:bg-white hover:text-black"
               >
-                Enquire on WhatsApp <ArrowUpRight size={18} />
+                Enquire on WhatsApp
+                <ArrowUpRight size={18} />
               </a>
 
               <a
                 href={`tel:+91${phone}`}
-                className="inline-flex items-center gap-3 border border-white/40 px-7 py-4 font-bold hover:bg-white hover:text-black"
+                className="inline-flex items-center gap-3 border border-white/40 px-7 py-4 font-bold text-white transition hover:bg-white hover:text-black"
               >
-                <Phone size={18} /> Call Studio
+                <Phone size={18} />
+                Call Studio
               </a>
             </div>
 
             <div className="mt-12 flex items-center justify-center gap-2 text-sm text-neutral-400">
               <MapPin size={17} className="text-red-500" />
-              Chetakpuri, Gwalior, Madhya Pradesh
+              Chetakpuri, Lashkar, Gwalior,
+              Madhya Pradesh
             </div>
           </div>
         </div>
