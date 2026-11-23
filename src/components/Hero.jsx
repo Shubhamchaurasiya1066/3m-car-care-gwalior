@@ -9,6 +9,7 @@ import {
   Play,
   ShieldCheck,
   Sparkles,
+  BadgeCheck,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -30,7 +31,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Cinematic Background Video */}
+      {/* Background Video */}
       {!reduceMotion && !videoFailed && (
         <video
           autoPlay
@@ -47,19 +48,17 @@ export default function Hero() {
         </video>
       )}
 
-      {/* Premium Dark Overlay */}
+      {/* Overlays */}
       <div
         className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/95 via-black/75 to-black/25"
         aria-hidden="true"
       />
 
-      {/* Bottom Gradient */}
       <div
         className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#08090b] via-transparent to-black/30"
         aria-hidden="true"
       />
 
-      {/* Red Cinematic Glow */}
       <div
         className="pointer-events-none absolute -right-40 top-1/4 h-[500px] w-[500px] rounded-full bg-red-600/10 blur-[140px]"
         aria-hidden="true"
@@ -69,55 +68,60 @@ export default function Hero() {
       <div className="container-custom relative z-10 py-28 md:py-36">
         <motion.div
           initial={
-            reduceMotion
-              ? false
-              : { opacity: 0, y: 40 }
+            reduceMotion ? false : { opacity: 0, y: 40 }
           }
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="max-w-4xl"
         >
-          {/* Small Heading */}
           <div className="mb-8 flex items-center gap-3">
             <span className="h-[2px] w-10 bg-red-600" />
-
             <span className="text-xs font-bold uppercase tracking-[0.22em] text-red-400 sm:tracking-[0.3em]">
               Premium Automotive Care • Gwalior
             </span>
           </div>
 
-          {/* Main Heading */}
           <h1 className="text-5xl font-black uppercase leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-8xl">
             Your Car.
             <br />
-            Our{" "}
-            <span className="text-red-500">
-              Passion.
-            </span>
+            Our <span className="text-red-500">Passion.</span>
             <br />
             Pure Perfection.
           </h1>
 
-          {/* Description */}
           <p className="mt-8 max-w-xl text-base leading-8 text-neutral-300 md:text-lg">
             Elevate your driving experience with
-            professional car detailing, paint protection
+            professional car detailing, paint protection,
             and premium automotive care at
             3M Car Care Studio Gwalior.
           </p>
 
-          {/* Business Identity - Meta Display Name */}
-          <div className="mt-7 inline-flex max-w-full flex-col gap-2 border-l-4 border-red-600 bg-black/50 px-5 py-4 backdrop-blur-md">
-            <p className="text-sm font-extrabold uppercase tracking-wide text-white sm:text-base">
-              3M Car Care Studio Gwalior
-            </p>
+          {/* Studio Identity */}
+          <div className="mt-8 max-w-xl border border-white/15 border-l-4 border-l-red-600 bg-black/55 p-5 backdrop-blur-md sm:p-6">
+            <div className="flex items-start gap-3">
+              <BadgeCheck
+                size={24}
+                className="mt-1 shrink-0 text-red-500"
+              />
 
-            <p className="text-sm font-semibold text-neutral-200">
-              Operated by{" "}
-              <span className="font-extrabold text-red-400">
-                Sudha Motors
-              </span>
-            </p>
+              <div>
+                <p className="text-base font-black uppercase tracking-wide text-white sm:text-lg">
+                  3M Car Care Studio Gwalior
+                </p>
+
+                <p className="mt-2 text-sm font-medium text-neutral-200">
+                  Operated by{" "}
+                  <span className="font-extrabold text-red-400">
+                    Sudha Motors
+                  </span>
+                </p>
+
+                <p className="mt-2 text-xs leading-6 text-neutral-400">
+                  Ground Floor, Chetakpuri, Near Barista
+                  Cafe, Gwalior, Madhya Pradesh – 474009
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* CTA Buttons */}
@@ -127,7 +131,6 @@ export default function Hero() {
               className="group inline-flex items-center justify-center gap-3 bg-red-600 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:bg-red-700 hover:shadow-[0_0_35px_rgba(220,38,38,0.35)]"
             >
               Book an Appointment
-
               <ArrowUpRight
                 size={19}
                 className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
@@ -143,7 +146,7 @@ export default function Hero() {
             </Link>
           </div>
 
-          {/* Service Highlights */}
+          {/* Highlights */}
           <div className="mt-14 flex flex-wrap items-center gap-6 border-t border-white/15 pt-7 text-sm text-neutral-300 md:gap-10">
             <div className="flex items-center gap-3">
               <ShieldCheck size={21} className="text-red-500" />
@@ -170,9 +173,7 @@ export default function Hero() {
         className="absolute bottom-6 left-1/2 z-20 -translate-x-1/2 text-white/70 transition hover:text-red-500"
       >
         <motion.div
-          animate={
-            reduceMotion ? {} : { y: [0, 8, 0] }
-          }
+          animate={reduceMotion ? {} : { y: [0, 8, 0] }}
           transition={{
             duration: 2,
             repeat: Infinity,
