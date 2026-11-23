@@ -21,7 +21,7 @@ export default function Hero() {
       id="home"
       className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#08090b] pt-20"
     >
-      {/* Background Image - Always Available */}
+      {/* Background Image */}
       <div
         className="absolute inset-0 -z-20 bg-cover bg-center"
         style={{
@@ -43,10 +43,7 @@ export default function Hero() {
           className="absolute inset-0 -z-10 h-full w-full object-cover"
           aria-hidden="true"
         >
-          <source
-            src="/videos/hero.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       )}
 
@@ -109,6 +106,20 @@ export default function Hero() {
             3M Car Care Studio Gwalior.
           </p>
 
+          {/* Business Identity - Meta Display Name */}
+          <div className="mt-7 inline-flex max-w-full flex-col gap-2 border-l-4 border-red-600 bg-black/50 px-5 py-4 backdrop-blur-md">
+            <p className="text-sm font-extrabold uppercase tracking-wide text-white sm:text-base">
+              3M Car Care Studio Gwalior
+            </p>
+
+            <p className="text-sm font-semibold text-neutral-200">
+              Operated by{" "}
+              <span className="font-extrabold text-red-400">
+                Sudha Motors
+              </span>
+            </p>
+          </div>
+
           {/* CTA Buttons */}
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
@@ -135,26 +146,17 @@ export default function Hero() {
           {/* Service Highlights */}
           <div className="mt-14 flex flex-wrap items-center gap-6 border-t border-white/15 pt-7 text-sm text-neutral-300 md:gap-10">
             <div className="flex items-center gap-3">
-              <ShieldCheck
-                size={21}
-                className="text-red-500"
-              />
+              <ShieldCheck size={21} className="text-red-500" />
               <span>Paint Protection</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <Sparkles
-                size={21}
-                className="text-red-500"
-              />
+              <Sparkles size={21} className="text-red-500" />
               <span>Premium Detailing</span>
             </div>
 
             <div className="flex items-center gap-3">
-              <Play
-                size={21}
-                className="text-red-500"
-              />
+              <Play size={21} className="text-red-500" />
               <span>Car Care Studio</span>
             </div>
           </div>
